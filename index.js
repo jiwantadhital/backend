@@ -18,10 +18,12 @@ app.get("/", (req, res) => res.send("Doctor Appointment API is running"));
 // Routes
 const appointmentRoutes = require("./routes/appointmentRoutes");
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 // Apply routes
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
